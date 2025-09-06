@@ -173,7 +173,7 @@ const RestaurantWebsite = () => {
                 </h2>
                 <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                   Since 1985, Bella Vista has been serving authentic Italian cuisine with a modern twist. 
-                  Our head chef, Marco Rossi, brings over 20 years of experience from Milan's finest restaurants.
+                  Our head chef, Marco Rossi, brings over 20 years of experience from Milan&apos;s finest restaurants.
                 </p>
                 <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                   We source the finest ingredients locally and from Italy, creating dishes that honor tradition 
