@@ -55,10 +55,10 @@ const RestaurantWebsite = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 overflow-x-hidden">
       {/* Demo Reservation Notification */}
       {showReservationDemo && (
-        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-gradient-to-r from-amber-600 to-orange-600 text-white px-8 py-4 rounded-lg shadow-2xl animate-bounce">
+        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 bg-gradient-to-r from-amber-600 to-orange-600 text-white px-4 sm:px-8 py-4 rounded-lg shadow-2xl animate-bounce max-w-[90vw]">
           <div className="text-center">
             <div className="font-bold text-lg">🍽️ Demo Only</div>
             <div className="text-sm">This is a portfolio showcase - reservations are not functional</div>
@@ -139,11 +139,11 @@ const RestaurantWebsite = () => {
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
           <div className={`max-w-3xl transform transition-all duration-1000 ${isVisible.hero ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} id="hero">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               An Unforgettable
               <span className="block text-amber-400">Dining Experience</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
               Experience the perfect blend of Italian tradition and modern culinary artistry in the heart of downtown.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -398,11 +398,11 @@ const RestaurantWebsite = () => {
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-slate-900 mb-2">Guests</label>
-                      <select className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500">
-                        <option>2 Guests</option>
-                        <option>4 Guests</option>
-                        <option>6 Guests</option>
-                        <option>8+ Guests</option>
+                      <select className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-slate-900 bg-white">
+                        <option className="text-slate-900">2 Guests</option>
+                        <option className="text-slate-900">4 Guests</option>
+                        <option className="text-slate-900">6 Guests</option>
+                        <option className="text-slate-900">8+ Guests</option>
                       </select>
                     </div>
                   </div>
