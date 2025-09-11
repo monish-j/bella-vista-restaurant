@@ -99,7 +99,7 @@ const RestaurantWebsite = () => {
 
             {/* Mobile Menu Button */}
             <button 
-              className="md:hidden"
+              className="md:hidden text-slate-700 hover:text-amber-600 transition-colors p-2 rounded-lg hover:bg-slate-100"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
