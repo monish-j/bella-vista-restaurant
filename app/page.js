@@ -14,6 +14,13 @@ const RestaurantWebsite = () => {
     setTimeout(() => setShowReservationDemo(false), 3000);
   };
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -148,13 +155,16 @@ const RestaurantWebsite = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
-                onClick={handleReserveTable}
+                onClick={() => scrollToSection('contact')}
                 className="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 inline-flex items-center justify-center"
               >
                 Reserve Your Table
                 <ArrowRight className="ml-2 w-5 h-5" />
               </button>
-              <button className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 inline-flex items-center justify-center">
+              <button 
+                onClick={() => scrollToSection('menu')}
+                className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 inline-flex items-center justify-center"
+              >
                 View Menu
               </button>
             </div>
@@ -240,13 +250,13 @@ const RestaurantWebsite = () => {
           </div>
 
           {/* Menu Categories */}
-          <div className="flex justify-center mb-12">
-            <div className="bg-slate-100 p-2 rounded-2xl inline-flex">
+          <div className="flex justify-center mb-12 px-4">
+            <div className="bg-slate-100 p-2 rounded-2xl flex flex-wrap justify-center gap-1 max-w-full">
               {Object.keys(menuItems).map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-8 py-3 rounded-xl font-semibold transition-all duration-300 capitalize ${
+                  className={`px-4 sm:px-6 md:px-8 py-3 rounded-xl font-semibold transition-all duration-300 capitalize text-sm sm:text-base ${
                     activeCategory === category
                       ? 'bg-gradient-to-r from-amber-600 to-orange-600 text-white shadow-lg'
                       : 'text-slate-600 hover:text-slate-900'
@@ -259,17 +269,17 @@ const RestaurantWebsite = () => {
           </div>
 
           {/* Menu Items */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {menuItems[activeCategory].map((item, index) => (
               <div 
                 key={index}
-                className="bg-slate-50 p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-all duration-300 group"
+                className="bg-slate-50 p-4 sm:p-6 md:p-8 rounded-2xl border border-slate-200 hover:shadow-lg transition-all duration-300 group"
               >
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">{item.name}</h3>
-                  <span className="text-2xl font-bold text-amber-600">{item.price}</span>
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 gap-2">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-amber-600 transition-colors">{item.name}</h3>
+                  <span className="text-xl sm:text-2xl font-bold text-amber-600 flex-shrink-0">{item.price}</span>
                 </div>
-                <p className="text-slate-600 leading-relaxed">{item.description}</p>
+                <p className="text-slate-600 leading-relaxed text-sm sm:text-base">{item.description}</p>
               </div>
             ))}
           </div>
